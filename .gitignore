@@ -137,3 +137,5 @@ data/WORLD DATA by country (2020)/Median age.csv
 data/WORLD DATA by country (2020)/Population growth.csv
 data/WORLD DATA by country (2020)/Urbanization rate.csv
 image/.DS_Store
+docker-airflow/.DS_Store
+.DS_Store
