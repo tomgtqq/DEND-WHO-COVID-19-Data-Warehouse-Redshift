@@ -127,3 +127,13 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+data/Countries_usefulFeatures.csv
+data/country_code.csv
+data/country_vaccinations.csv
+data/WHO-COVID-19-global-data.csv
+data/WORLD DATA by country (2020)/GDP per capita.csv
+data/WORLD DATA by country (2020)/Life expectancy.csv
+data/WORLD DATA by country (2020)/Median age.csv
+data/WORLD DATA by country (2020)/Population growth.csv
+data/WORLD DATA by country (2020)/Urbanization rate.csv
+image/.DS_Store
