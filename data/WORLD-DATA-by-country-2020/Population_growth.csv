@@ -1,0 +1,208 @@
+Country,Population growth,ISO-code
+Afghanistan,2.41,AFG
+Albania,0.26,ALB
+Algeria,1.89,DZA
+American Samoa,-0.26,ASM
+Andorra,0.63,AND
+Angola,3.12,AGO
+Antigua and Barbuda,1.03,ATG
+Argentina,0.88,ARG
+Armenia,0.17,ARM
+Aruba,0.44,ABW
+Australia,1.6,AUS
+Austria,0.46,AUT
+Azerbaijan,1.35,AZE
+Bahrain,1.92,BHR
+Bangladesh,1.19,BGD
+Barbados,0.5,BRB
+Belarus,-0.1,BLR
+Belgium,0.85,BEL
+Belize,2.43,BLZ
+Benin,2.73,BEN
+Bermuda,0.37,BMU
+Bhutan,1.68,BTN
+Bolivia,1.65,BOL
+Bosnia and Herzegovina,-0.14,BIH
+Botswana,0.86,BWA
+Brazil,0.87,BRA
+Brunei,1.4,BRN
+Bulgaria,-0.6,BGR
+Burkina Faso,2.86,BFA
+Burundi,3.19,BDI
+Cambodia,1.76,KHM
+Cameroon,2.54,CMR
+Canada,1.14,CAN
+Cape Verde,0.78,CPV
+Cayman Islands,1.7,CYM
+Central African Republic,1.99,CAF
+Chad,3,TCD
+Chile,0.9,CHL
+China,0.49,CHN
+Colombia,1.32,COL
+Comoros,2.44,COM
+Costa Rica,1.42,CRI
+Croatia,-0.32,HRV
+Cuba,-0.05,CUB
+Curacao,0.73,CUW
+Cyprus,1.11,CYP
+Czech Republic,0.18,CZE
+Democratic Republic of the Congo,2.74,COD
+Denmark,0.36,DNK
+Djibouti,1.52,DJI
+Dominica,0.4,DMA
+Dominican Republic,1.26,DOM
+East Timor,2.88,TLS
+Ecuador,1.6,ECU
+Egypt,1.66,EGY
+El Salvador,0.66,SLV
+Equatorial Guinea,2.8,GNQ
+Eritrea,3.28,ERI
+Estonia,-0.04,EST
+Eswatini,1.54,SWZ
+Ethiopia,2.58,ETH
+Fiji,0.78,FJI
+Finland,0.48,FIN
+France,0.5,FRA
+French Polynesia,1.08,PYF
+Gabon,2.39,GAB
+Georgia,0.63,GEO
+Germany,0.11,DEU
+Ghana,2.17,GHA
+Greece,-0.18,GRC
+Greenland,-0.11,GRL
+Grenada,0.39,GRD
+Guam,1.21,GUM
+Guatemala,2.53,GTM
+Guinea,2.56,GIN
+Guinea,2.39,GIN
+Guyana,0.57,GUY
+Haiti,1.39,HTI
+Honduras,2.03,HND
+Hong Kong,1.17,HKG
+Hungary,-0.28,HUN
+Iceland,0.35,ISL
+India,1.26,IND
+Indonesia,1.25,IDN
+Iran,1.32,IRN
+Iraq,2.54,IRQ
+Ireland,0.26,IRL
+Isle of Man,0.74,IMN
+Israel,1.81,ISR
+Italy,0.32,ITA
+Ivory Coast,2.29,CIV
+Jamaica,0.21,JAM
+Japan,-0.2,JPN
+Jordan,2.19,JOR
+Kazakhstan,1.43,KAZ
+Kenya,2.7,KEN
+Kiribati,1.54,KIR
+Kuwait,3.95,KWT
+Kyrgyzstan,1.22,KGZ
+Laos,1.89,LAO
+Latvia,-1.6,LVA
+Lebanon,0.96,LBN
+Lesotho,1.08,LSO
+Liberia,2.68,LBR
+Libya,0.84,LBY
+Liechtenstein,0.73,LIE
+Lithuania,-1.48,LTU
+Luxembourg,2.49,LUX
+Macau,1.9,MAC
+Madagascar,2.8,MDG
+Malawi,2.86,MWI
+Malaysia,1.66,MYS
+Maldives,1.93,MDV
+Mali,2.99,MLI
+Malta,0.4,MLT
+Marshall Islands,0.11,MHL
+Mauritania,2.49,MRT
+Mauritius,0.42,MUS
+Mexico,1.24,MEX
+Micronesia,-0.03,FSM
+Moldova,-0.04,MDA
+Monaco,0.85,MCO
+Mongolia,1.52,MNG
+Montenegro,0.07,MNE
+Morocco,1.43,MAR
+Mozambique,2.5,MOZ
+Myanmar,0.85,MMR
+Namibia,1.87,NAM
+Nepal,1.16,NPL
+Netherlands,0.45,NLD
+New Caledonia,1.6,NCL
+New Zealand,0.63,NZL
+Nicaragua,1.46,NIC
+Niger,3.84,NER
+Nigeria,2.79,NGA
+North Korea,0.53,PRK
+North Macedonia,0.08,MKD
+Northern Mariana Islands,0.14,MNP
+Norway,1.32,NOR
+Oman,9.13,OMN
+Pakistan,2.69,PAK
+Palau,0.72,PLW
+Palestine,3.01,PSE
+Panama,1.64,PAN
+Papua New Guinea,2.17,PNG
+Paraguay,1.72,PRY
+Peru,1.25,PER
+Philippines,1.72,PHL
+Poland,0.02,POL
+Portugal,-0.29,PRT
+Puerto Rico,-0.73,PRI
+Qatar,7.05,QAT
+Republic of the Congo,2.61,COG
+Romania,-0.27,ROU
+Russia,0.4,RUS
+Rwanda,2.77,RWA
+Saint Kitts and Nevis,1.15,KNA
+Saint Lucia,0.89,LCA
+Saint Vincent and the Grenadines,0.01,VCT
+Samoa,0.78,WSM
+San Marino,0.64,SMR
+Saudi Arabia,1.88,SAU
+Senegal,2.92,SEN
+Serbia,-0.48,SRB
+Seychelles,0.39,SYC
+Sierra Leone,1.91,SLE
+Singapore,2.45,SGP
+Slovakia,0.22,SVK
+Slovenia,0.26,SVN
+Solomon Islands,2.13,SLB
+Somalia,2.86,SOM
+South Africa,1.18,ZAF
+South Korea,0.45,KOR
+South Sudan,4.3,SSD
+Spain,0.09,ESP
+Sri Lanka,1.04,LKA
+Sudan,2.08,SDN
+Suriname,0.9,SUR
+Sweden,0.71,SWE
+Switzerland,1.07,CHE
+Syria,1.97,SYR
+Tajikistan,2.45,TJK
+Tanzania,3.04,TZA
+Thailand,0.31,THA
+The Bahamas,1.52,BHS
+The Gambia,3.19,GMB
+Togo,2.6,TGO
+Tonga,0.37,TON
+Trinidad and Tobago,0.33,TTO
+Tunisia,0.97,TUN
+Turkey,1.28,TUR
+Turkmenistan,1.29,TKM
+Turks and Caicos Islands,2.19,TCA
+Tuvalu,0.16,TUV
+Uganda,3.35,UGA
+Ukraine,-0.25,UKR
+United Arab Emirates,3.1,ARE
+United Kingdom,0.75,GBR
+United States,0.74,USA
+Uruguay,0.35,URY
+Uzbekistan,1.47,UZB
+Vanuatu,2.24,VUT
+Venezuela,1.53,VEN
+Vietnam,1.06,VNM
+Yemen,2.33,YEM
+Zambia,3.19,ZMB
+Zimbabwe,2.7,ZWE

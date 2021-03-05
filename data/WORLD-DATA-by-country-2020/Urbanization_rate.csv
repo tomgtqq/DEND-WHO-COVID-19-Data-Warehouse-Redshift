@@ -1,0 +1,219 @@
+Country,Urbanization rate,ISO-code
+Monaco,100,MCO
+Nauru,100,NRU
+Singapore,100,SGP
+Anguilla,100,AIA
+Bermuda,100,BMU
+Cayman Islands,100,CYM
+Gibraltar,100,GIB
+Hong Kong,100,HKG
+Macau,100,MAC
+Sint Maarten,100,SXM
+Qatar,99.2,QAT
+Belgium,98.1,BEL
+San Marino,97.5,SMR
+Uruguay,95.5,URY
+Guam,94.9,GUM
+Malta,94.7,MLT
+Iceland,93.9,ISL
+Puerto Rico,93.6,PRI
+Turks and Caicos Islands,93.6,TCA
+Israel,92.6,ISR
+Netherlands,92.2,NLD
+Argentina,92.1,ARG
+Northern Mariana Islands,91.8,MNP
+Japan,91.8,JPN
+Luxembourg,91.5,LUX
+Jordan,91.4,JOR
+Saint Pierre and Miquelon,90,SPM
+Gabon,90.1,GAB
+Bahrain,89.5,BHR
+Curacao,89.1,CUW
+Lebanon,88.9,LBN
+Venezuela,88.3,VEN
+Denmark,88.1,DNK
+Sweden,88,SWE
+Andorra,87.9,AND
+Chile,87.7,CHL
+American Samoa,87.2,ASM
+Greenland,87.3,GRL
+Western Sahara,86.8,ESH
+Brazil,87.1,BRA
+United Arab Emirates,87,ARE
+New Zealand,86.7,NZL
+Oman,86.3,OMN
+Australia,86.2,AUS
+Finland,85.5,FIN
+Saudi Arabia,84.3,SAU
+United Kingdom,83.9,GBR
+The Bahamas,83.2,BHS
+Norway,83,NOR
+United States,82.7,USA
+Dominican Republic,82.5,DOM
+Canada,81.6,CAN
+South Korea,81.4,KOR
+Colombia,81.4,COL
+France,81,FRA
+Palau,81,PLW
+Spain,80.8,ESP
+Costa Rica,80.8,CRI
+Mexico,80.7,MEX
+Libya,80.7,LBY
+Greece,79.7,GRC
+Belarus,79.5,BLR
+Taiwan,78.9,TWN
+Peru,78.3,PER
+Brunei,78.3,BRN
+Djibouti,78.1,DJI
+Marshall Islands,77.8,MHL
+Germany,77.5,DEU
+Cuba,77.2,CUB
+Malaysia,77.2,MYS
+Palestine,76.7,PSE
+Turkey,76.1,TUR
+Cook Islands,75.5,COK
+Iran,75.9,IRN
+Bulgaria,75.7,BGR
+Russia,74.8,RUS
+Czech Republic,74.1,CZE
+Switzerland,73.9,CHE
+Algeria,73.7,DZA
+El Salvador,73.4,SLV
+Equatorial Guinea,73.1,GNQ
+Hungary,71.9,HUN
+New Caledonia,71.5,NCL
+Dominica,71.1,DMA
+Italy,71,ITA
+Iraq,70.9,IRQ
+Botswana,70.9,BWA
+Bolivia,70.1,BOL
+Ukraine,69.6,UKR
+Tunisia,69.6,TUN
+Estonia,69.2,EST
+Mongolia,68.7,MNG
+Panama,68.4,PAN
+Latvia,68.3,LVA
+Lithuania,68,LTU
+Republic of the Congo,67.8,COG
+Montenegro,67.5,MNE
+South Africa,67.4,ZAF
+Cyprus,66.8,CYP
+Angola,66.8,AGO
+Cape Verde,66.7,CPV
+Portugal,66.3,PRT
+Suriname,66.1,SUR
+Ecuador,64.2,ECU
+Tuvalu,64,TUV
+Ireland,63.7,IRL
+Morocco,63.5,MAR
+Armenia,63.3,ARM
+The Gambia,62.6,GMB
+North Korea,62.4,PRK
+French Polynesia,62,PYF
+Paraguay,62.2,PRY
+Albania,62.1,ALB
+China,61.4,CHN
+Poland,60,POL
+Georgia,59.5,GEO
+Nicaragua,59,NIC
+Austria,58.7,AUT
+North Macedonia,58.5,MKD
+Honduras,58.4,HND
+Kazakhstan,57.7,KAZ
+Croatia,57.6,HRV
+Cameroon,57.6,CMR
+Seychelles,57.5,SYC
+Ghana,57.3,GHA
+Fiji,57.2,FJI
+Haiti,57.1,HTI
+Indonesia,56.6,IDN
+Romania,56.4,ROU
+Serbia,56.4,SRB
+Azerbaijan,56.4,AZE
+Jamaica,56.3,JAM
+Kiribati,55.6,KIR
+Syria,55.5,SYR
+Mauritania,55.3,MRT
+Slovenia,55.1,SVN
+Slovakia,53.8,SVK
+Trinidad and Tobago,53.2,TTO
+Isle of Man,52.9,IMN
+Saint Vincent and the Grenadines,53,VCT
+Turkmenistan,52.5,TKM
+Liberia,52.1,LBR
+Nigeria,52,NGA
+Namibia,52,NAM
+Guatemala,51.8,GTM
+Ivory Coast,51.7,CIV
+Thailand,51.4,THA
+Uzbekistan,50.4,UZB
+Bosnia and Herzegovina,49,BIH
+Benin,48.4,BEN
+Senegal,48.1,SEN
+Philippines,47.4,PHL
+Somalia,46.1,SOM
+Belize,46,BLZ
+Niue,46.2,NIU
+Democratic Republic of the Congo,45.6,COD
+Zambia,44.6,ZMB
+Guinea,44.2,GIN
+Mali,43.9,MLI
+Aruba,43.7,ABW
+Sierra Leone,42.9,SLE
+Egypt,42.8,EGY
+Moldova,42.8,MDA
+Faroe Islands,42.4,FRO
+Togo,42.8,TGO
+Bhutan,42.3,BTN
+Central African Republic,42.2,CAF
+Eritrea,41.3,ERI
+Mauritius,40.8,MUS
+Maldives,40.7,MDV
+"Saint Helena, Ascension and Tristan da Cunha",40.1,SHN
+Madagascar,38.5,MDG
+Bangladesh,38.2,BGD
+Vietnam,37.3,VNM
+Pakistan,37.2,PAK
+Mozambique,37.1,MOZ
+Kyrgyzstan,36.9,KGZ
+Yemen,36.6,YEM
+Grenada,36.5,GRD
+Guinea,36.5,GIN
+Laos,36.3,LAO
+Sudan,35.3,SDN
+Tanzania,35.2,TZA
+India,34.9,IND
+Zimbabwe,32.2,ZWE
+East Timor,31.3,TLS
+Barbados,31.2,BRB
+Myanmar,31.1,MMR
+Guernsey,31,GGY
+Jersey,31,JEY
+Saint Kitts and Nevis,30.8,KNA
+Burkina Faso,30.6,BFA
+Comoros,29.4,COM
+Lesotho,29,LSO
+Kenya,28,KEN
+Tajikistan,27.5,TJK
+Guyana,26.8,GUY
+Afghanistan,26,AFG
+Vanuatu,25.5,VUT
+Uganda,25,UGA
+Solomon Islands,24.7,SLB
+Antigua and Barbuda,24.4,ATG
+Eswatini,24.2,SWZ
+Cambodia,24.2,KHM
+Chad,23.5,TCD
+Tonga,23.1,TON
+Ethiopia,21.7,ETH
+Nepal,20.6,NPL
+South Sudan,20.2,SSD
+Saint Lucia,18.8,LCA
+Sri Lanka,18.7,LKA
+Rwanda,17.4,RWA
+Malawi,17.4,MWI
+Niger,16.6,NER
+Liechtenstein,14.4,LIE
+Burundi,13.7,BDI
+Papua New Guinea,13.3,PNG
+Montserrat,9.1,MSR

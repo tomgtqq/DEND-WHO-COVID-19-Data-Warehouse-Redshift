@@ -1,0 +1,224 @@
+Country,Median age,ISO-code
+Afghanistan,27.4,AFG
+Albania,32.9,ALB
+Algeria,28.1,DZA
+American Samoa,25.5,ASM
+Andorra,44.3,AND
+Angola,15.9,AGO
+Anguilla,34.8,AIA
+Antigua and Barbuda,31.9,ATG
+Argentina,31.7,ARG
+Armenia,35.1,ARM
+Aruba,39.3,ABW
+Australia,38.7,AUS
+Austria,44,AUT
+Azerbaijan,32.3,AZE
+The Bahamas,32,BHS
+Bahrain,32.3,BHR
+Bangladesh,26.7,BGD
+Barbados,38.6,BRB
+Belarus,40,BLR
+Belgium,41.4,BEL
+Belize,22.7,BLZ
+Benin,18.2,BEN
+Bermuda,43.4,BMU
+Bhutan,27.6,BTN
+Bolivia,24.3,BOL
+Bosnia and Herzegovina,42.1,BIH
+Botswana,24.5,BWA
+Brazil,32.6,BRA
+British Virgin Islands,36.5,
+Brunei,30.2,BRN
+Bulgaria,42.7,BGR
+Burkina Faso,17.3,BFA
+Burundi,17,BDI
+Cape Verde,25.4,CPV
+Cambodia,25.3,KHM
+Cameroon,18.5,CMR
+Canada,42.2,CAN
+Cayman Islands,40,CYM
+Central African Republic,19.7,CAF
+Chad,17.8,TCD
+Chile,34.4,CHL
+China,37.4,CHN
+Colombia,30,COL
+Comoros,19.9,COM
+Democratic Republic of the Congo,18.6,COD
+Republic of the Congo,19.7,COG
+Cook Islands,36.5,COK
+Costa Rica,31.3,CRI
+Ivory Coast,20.9,CIV
+Croatia,43,HRV
+Cuba,41.5,CUB
+Curacao,36.1,CUW
+Cyprus,36.8,CYP
+Czech Republic,42.1,CZE
+Denmark,42.2,DNK
+Djibouti,23.9,DJI
+Dominica,33.5,DMA
+Dominican Republic,28.1,DOM
+Ecuador,27.7,ECU
+Egypt,23.9,EGY
+El Salvador,27.1,SLV
+Equatorial Guinea,19.8,GNQ
+Eritrea,19.7,ERI
+Estonia,42.7,EST
+Eswatini,21.7,SWZ
+Ethiopia,17.9,ETH
+Faroe Islands,37.6,FRO
+Fiji,28.9,FJI
+Finland,42.5,FIN
+France,41.4,FRA
+French Polynesia,31.9,PYF
+Gabon,18.6,GAB
+The Gambia,21,GMB
+Georgia,38.1,GEO
+Germany,47.1,DEU
+Ghana,21.1,GHA
+Gibraltar,34.7,GIB
+Greece,44.5,GRC
+Greenland,33.9,GRL
+Grenada,31.5,GRD
+Guam,29,GUM
+Guatemala,22.1,GTM
+Guernsey,43.8,GGY
+Guinea,20.1,GIN
+Guinea,18.9,GIN
+Guyana,26.2,GUY
+Haiti,23,HTI
+Honduras,23,HND
+Hong Kong,44.4,HKG
+Hungary,42.3,HUN
+Iceland,36.5,ISL
+India,28.1,IND
+Indonesia,30.2,IDN
+Iran,30.3,IRN
+Iraq,20,IRQ
+Ireland,36.8,IRL
+Isle of Man,44.2,IMN
+Israel,29.9,ISR
+Italy,45.5,ITA
+Jamaica,26,JAM
+Japan,47.3,JPN
+Jersey,38,JEY
+Jordan,22.5,JOR
+Kazakhstan,30.6,KAZ
+Kenya,19.7,KEN
+Kiribati,24.6,KIR
+North Korea,34,PRK
+South Korea,41.8,KOR
+Kuwait,29.3,KWT
+Kyrgyzstan,26.5,KGZ
+Laos,23,LAO
+Latvia,43.6,LVA
+Lebanon,30.5,LBN
+Lesotho,24.2,LSO
+Liberia,17.8,LBR
+Libya,28.9,LBY
+Liechtenstein,43.2,LIE
+Lithuania,43.7,LTU
+Luxembourg,39.3,LUX
+Macau,39.3,MAC
+North Macedonia,37.9,MKD
+Madagascar,19.7,MDG
+Malawi,16.5,MWI
+Malaysia,28.5,MYS
+Maldives,28.2,MDV
+Mali,15.8,MLI
+Malta,41.8,MLT
+Marshall Islands,22.9,MHL
+Mauritania,20.5,MRT
+Mauritius,35.3,MUS
+Mexico,28.3,MEX
+Micronesia,25.1,FSM
+Moldova,36.7,MDA
+Monaco,53.1,MCO
+Mongolia,28.3,MNG
+Montenegro,40.7,MNE
+Montserrat,33.2,MSR
+Morocco,29.3,MAR
+Mozambique,17.2,MOZ
+Namibia,21.2,NAM
+Nauru,26.4,NRU
+Nepal,24.1,NPL
+Netherlands,42.6,NLD
+New Caledonia,32,NCL
+New Zealand,37.9,NZL
+Nicaragua,25.7,NIC
+Nigeria,18.4,NGA
+Niger,15.4,NER
+Northern Mariana Islands,33.6,MNP
+Norway,39.2,NOR
+Oman,25.6,OMN
+Pakistan,23.8,PAK
+Palau,33.4,PLW
+Panama,29.2,PAN
+Papua New Guinea,23.1,PNG
+Paraguay,28.2,PRY
+Peru,28,PER
+Philippines,23.5,PHL
+Poland,40.7,POL
+Portugal,42.2,PRT
+Puerto Rico,41.5,PRI
+Qatar,33.2,QAT
+Romania,41.1,ROU
+Russia,39.6,RUS
+Rwanda,19,RWA
+Saint Barthelemy,44.1,BLM
+Saint Kitts and Nevis,35,KNA
+Saint Lucia,34.8,LCA
+Saint Martin,32.5,MAF
+Saint Pierre and Miquelon,46.5,SPM
+Saint Vincent and the Grenadines,33.6,VCT
+Samoa,24.4,WSM
+San Marino,44.4,SMR
+Sao Tome and Principe,18.4,STP
+Saudi Arabia,27.5,SAU
+Senegal,18.8,SEN
+Serbia,42.6,SRB
+Seychelles,35.4,SYC
+Sierra Leone,19,SLE
+Singapore,34.6,SGP
+Sint Maarten,41,SXM
+Slovakia,40.5,SVK
+Slovenia,44.5,SVN
+Solomon Islands,22.5,SLB
+Somalia,18.1,SOM
+South Africa,27.1,ZAF
+South Sudan,17.3,SSD
+Spain,42.7,ESP
+Sri Lanka,32.8,LKA
+Sudan,19.9,SDN
+Suriname,29.8,SUR
+Sweden,41.2,SWE
+Switzerland,42.4,CHE
+Syria,24.3,SYR
+Taiwan,40.7,TWN
+Tajikistan,24.5,TJK
+Tanzania,17.7,TZA
+Thailand,37.7,THA
+East Timor,18.9,TLS
+Togo,19.8,TGO
+Tonga,23,TON
+Trinidad and Tobago,36,TTO
+Tunisia,31.6,TUN
+Turkey,30.9,TUR
+Turkmenistan,27.9,TKM
+Turks and Caicos Islands,33.3,TCA
+Tuvalu,25.7,TUV
+Uganda,15.8,UGA
+Ukraine,40.6,UKR
+United Arab Emirates,30.3,ARE
+United Kingdom,40.5,GBR
+United States,38.1,USA
+Uruguay,35,URY
+Uzbekistan,28.6,UZB
+Vanuatu,22,VUT
+Venezuela,28.3,VEN
+Vietnam,30.5,VNM
+Virgin Islands,41,VIR
+Wallis and Futuna,32.2,WLF
+Western Sahara,21.1,ESH
+Yemen,19.5,YEM
+Zambia,16.8,ZMB
+Zimbabwe,20,ZWE

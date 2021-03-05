@@ -1,0 +1,192 @@
+Country,GDP per capita,ISO-code
+Afghanistan,2182,AFG
+Albania,14866,ALB
+Algeria,16091,DZA
+Angola,6763,AGO
+Antigua and Barbuda,30593,ATG
+Argentina,19971,ARG
+Armenia,11845,ARM
+Australia,54799,AUS
+Austria,55171,AUT
+Azerbaijan,19156,AZE
+Bahrain,51991,BHR
+Bangladesh,5453,BGD
+Barbados,19364,BRB
+Belarus,21224,BLR
+Belgium,50904,BEL
+Belize,8791,BLZ
+Benin,3648,BEN
+Bhutan,10627,BTN
+Bolivia,8525,BOL
+Bosnia and Herzegovina,14894,BIH
+Botswana,19388,BWA
+Brazil,17106,BRA
+Brunei,85011,BRN
+Bulgaria,26034,BGR
+Burkina Faso,2181,BFA
+Burundi,724,BDI
+Cambodia,5004,KHM
+Cameroon,4099,CMR
+Canada,52144,CAN
+Cape Verde,8716,CPV
+Central African Republic,864,CAF
+Chad,2603,TCD
+Chile,27150,CHL
+China,20984,CHN
+Colombia,16265,COL
+Comoros,2898,COM
+Costa Rica,18651,CRI
+Croatia,29207,HRV
+Cuba,8822,CUB
+Cyprus,42956,CYP
+Czech Republic,40585,CZE
+Democratic Republic of the Congo,873,COD
+Denmark,55675,DNK
+Djibouti,5855,DJI
+Dominica,12851,DMA
+Dominican Republic,20625,DOM
+East Timor,5321,TLS
+Ecuador,11866,ECU
+Egypt,14800,EGY
+El Salvador,8593,SLV
+Equatorial Guinea,19961,GNQ
+Eritrea,1103,ERI
+Estonia,37606,EST
+Eswatini,11139,SWZ
+Ethiopia,2702,ETH
+Fiji,12689,FJI
+Finland,49548,FIN
+France,48640,FRA
+Gabon,19839,GAB
+Georgia,13200,GEO
+Germany,55306,DEU
+Ghana,7343,GHA
+Greece,31616,GRC
+Greenland,48182,GRL
+Grenada,17434,GRD
+Guatemala,9009,GTM
+Guinea,2574,GIN
+Guinea,2113,GIN
+Guyana,17163,GUY
+Haiti,1916,HTI
+Honduras,5600,HND
+Hong Kong,66527,HKG
+Hungary,35941,HUN
+Iceland,56974,ISL
+India,9027,IND
+Indonesia,14841,IDN
+Iran,17832,IRN
+Iraq,18755,IRQ
+Ireland,86988,IRL
+Israel,40337,ISR
+Italy,41582,ITA
+Ivory Coast,4754,CIV
+Jamaica,9932,JAM
+Japan,46827,JPN
+Jordan,9939,JOR
+Kazakhstan,30178,KAZ
+Kenya,4078,KEN
+Kiribati,2193,KIR
+Kuwait,67891,KWT
+Kyrgyzstan,4193,KGZ
+Laos,8684,LAO
+Latvia,32987,LVA
+Lebanon,15599,LBN
+Lesotho,3655,LSO
+Liberia,1428,LBR
+Libya,9446,LBY
+Lithuania,38751,LTU
+Luxembourg,112045,LUX
+Macau,113352,MAC
+Madagascar,1776,MDG
+Malawi,1292,MWI
+Malaysia,34567,MYS
+Maldives,24796,MDV
+Mali,2569,MLI
+Malta,49589,MLT
+Marshall Islands,3972,MHL
+Mauritania,5158,MRT
+Mauritius,26461,MUS
+Mexico,21363,MEX
+Micronesia,3657,FSM
+Moldova,8161,MDA
+Mongolia,15089,MNG
+Montenegro,21977,MNE
+Morocco,9667,MAR
+Mozambique,1372,MOZ
+Myanmar,7220,MMR
+Namibia,11451,NAM
+Nauru,9073,NRU
+Nepal,3550,NPL
+Netherlands,60299,NLD
+New Zealand,42045,NZL
+Nicaragua,5297,NIC
+Niger,1152,NER
+Nigeria,6172,NGA
+North Macedonia,17378,MKD
+Norway,79638,NOR
+Oman,48593,OMN
+Pakistan,6016,PAK
+Palau,16855,PLW
+Panama,28456,PAN
+Papua New Guinea,4081,PNG
+Paraguay,13213,PRY
+Peru,15399,PER
+Philippines,10094,PHL
+Poland,35651,POL
+Portugal,34936,PRT
+Puerto Rico,41198,PRI
+Republic of the Congo,7336,COG
+Romania,29555,ROU
+Russia,30820,RUS
+Rwanda,2642,RWA
+Saint Kitts and Nevis,31950,KNA
+Saint Lucia,15159,LCA
+Saint Vincent and the Grenadines,12983,VCT
+Samoa,6493,WSM
+San Marino,62913,SMR
+Saudi Arabia,56912,SAU
+Senegal,4079,SEN
+Serbia,19767,SRB
+Seychelles,33118,SYC
+Sierra Leone,1765,SLE
+Singapore,105689,SGP
+Slovakia,38321,SVK
+Slovenia,40344,SVN
+Solomon Islands,2363,SLB
+Somalia,314.5,SOM
+South Africa,13965,ZAF
+South Korea,46452,KOR
+South Sudan,1715,SSD
+Spain,43007,ESP
+Sri Lanka,14509,LKA
+Sudan,3986,SDN
+Suriname,16044,SUR
+Sweden,55989,SWE
+Switzerland,67558,CHE
+Taiwan,57214,TWN
+Tajikistan,3751,TJK
+Tanzania,3652,TZA
+Thailand,21361,THA
+The Bahamas,33432,BHS
+The Gambia,2892,GMB
+Togo,1913,TGO
+Tonga,6867,TON
+Trinidad and Tobago,33713,TTO
+Tunisia,13093,TUN
+Turkey,29327,TUR
+Turkmenistan,21855,TKM
+Tuvalu,4535,TUV
+Uganda,2753,UGA
+Ukraine,10130,UKR
+United Arab Emirates,70441,ARE
+United Kingdom,48169,GBR
+United States,67426,USA
+Uruguay,24516,URY
+Uzbekistan,9595,UZB
+Vanuatu,3039,VUT
+Venezuela,16055,VEN
+Vietnam,8677,VNM
+Yemen,2312,YEM
+Zambia,4174,ZMB
+Zimbabwe,2778,ZWE
