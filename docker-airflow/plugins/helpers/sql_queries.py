@@ -2,167 +2,259 @@ class SqlQueries:
     create_WHO_COVID19_data_table = ("""
         DROP TABLE IF EXISTS WHO_COVID19_data; 
         CREATE TABLE IF NOT EXISTS WHO_COVID19_data (
-            date_reported timestamp NOT NULL,
-            country_code varchar(64),
-            country varchar(64),
-            WHO_region varchar(64),
-            new_cases int,
-            cumulative_cases int,
-            new_deaths int,
-            cumulative_deaths int
+            date_reported                        DATE NOT NULL DISTKEY,
+            country_code                         VARCHAR(16) NOT NULL SORTKEY,
+            country                              VARCHAR(64) NOT NULL,
+            WHO_region                           VARCHAR(64) NOT NULL,
+            new_cases                            INTEGER,
+            cumulative_cases                     INTEGER,
+            new_deaths                           INTEGER,
+            cumulative_deaths                    INTEGER,
+            CONSTRAINT WHO_COVID19_data_pkey PRIMARY KEY (date_reported, country_code)
         );
     """)
 
     create_staging_vaccinations_table = ("""
         DROP TABLE IF EXISTS staging_vaccinations; 
         CREATE TABLE IF NOT EXISTS staging_vaccinations (
-            country varchar(64) NOT NULL,
-            iso_code varchar(64),
-            date timestamp NOT NULL,
-            total_vaccinations int,
-            people_vaccinated int,
-            people_fully_vaccinated int,
-            daily_vaccinations_raw int,
-            daily_vaccinations int,
-            total_vaccinations_per_hundred float(2),
-            people_vaccinated_per_hundred float(2),
-            people_fully_vaccinated_per_hundred float(2),
-            daily_vaccinations_per_million float(2),
-            vaccines varchar(64),
-            source_name varchar(64),
-            source_website varchar
-        );
+            country                              VARCHAR(64) NOT NULL,
+            iso_code                             VARCHAR(16),
+            date                                 DATE NOT NULL,
+            total_vaccinations                   INTEGER,
+            people_vaccinated                    INTEGER,
+            people_fully_vaccinated              INTEGER,
+            daily_vaccinations_raw               INTEGER,
+            daily_vaccinations                   INTEGER,
+            total_vaccinations_per_hundred       FLOAT,
+            people_vaccinated_per_hundred        FLOAT,
+            people_fully_vaccinated_per_hundred  FLOAT,
+            daily_vaccinations_per_million       FLOAT,
+            vaccines                             VARCHAR(64),
+            source_name                          VARCHAR(64),
+            source_website                       VARCHAR,
+            CONSTRAINT vaccinations_pkey PRIMARY KEY (date, country)
+        )
+        diststyle auto;
     """)
 
     create_staging_country_code_table = ("""
         DROP TABLE IF EXISTS staging_country_code; 
         CREATE TABLE IF NOT EXISTS staging_country_code (
-            country_name varchar(64) NOT NULL,
-            code_2digit varchar(64) NOT NULL,
-            code_3digit varchar(64) NOT NULL
-        );
+            country_name                        VARCHAR(64) PRIMARY KEY,
+            code_2digit                         VARCHAR(16) NOT NULL,
+            code_3digit                         VARCHAR(16) NOT NULL
+        )
+        diststyle auto;
     """)
 
     create_staging_useful_features_table = ("""
         DROP TABLE IF EXISTS staging_useful_features; 
         CREATE TABLE IF NOT EXISTS staging_useful_features (
-            country_region varchar(64) NOT NULL,
-            population_size int,
-            tourism int,
-            date_first_fatality timestamp,
-            date_first_confirmed_case timestamp,
-            latitude float,
-            longtitude float,
-            mean_age float(2),
-            lockdown_date timestamp,
-            lockdown_type varchar(64),
-            country_code varchar(64)
-        );
+            country_region                      VARCHAR(64) PRIMARY KEY,
+            population_size                     INTEGER,
+            tourism                             INTEGER,
+            date_first_fatality                 DATE,
+            date_first_confirmed_case           DATE,
+            latitude                            FLOAT,
+            longtitude                          FLOAT,
+            mean_age                            FLOAT,
+            lockdown_date                       DATE,
+            lockdown_type                       VARCHAR(64),
+            country_code                        VARCHAR(64)
+        )
+        diststyle auto;
+    """)
+
+    create_staging_GDP_per_capita_table = ("""
+        DROP TABLE IF EXISTS staging_GDP_per_capita; 
+        CREATE TABLE IF NOT EXISTS staging_GDP_per_capita (
+            country                             VARCHAR(64) PRIMARY KEY,
+            GDP_per_capita                      INTEGER NOT NULL,
+            iso_code                            VARCHAR(16) NOT NULL
+        )
+        diststyle auto;
+    """)
+
+    create_staging_life_expectancy_table = ("""
+        DROP TABLE IF EXISTS staging_life_expectancy; 
+        CREATE TABLE IF NOT EXISTS staging_life_expectancy (
+            country                             VARCHAR(64) PRIMARY KEY,
+            life_expectancy                     FLOAT NOT NULL,
+            iso_code                            VARCHAR(16) NOT NULL
+        )
+        diststyle auto;
+    """)
+
+
+    create_staging_median_age_table = ("""
+        DROP TABLE IF EXISTS staging_median_age; 
+        CREATE TABLE IF NOT EXISTS staging_median_age (
+            country                             VARCHAR(64) PRIMARY KEY,
+            median_age                          FLOAT NOT NULL,
+            iso_code                            VARCHAR(16) NOT NULL
+        )
+        diststyle auto;
+    """)
+
+    create_staging_population_growth_table = ("""
+        DROP TABLE IF EXISTS staging_population_growth; 
+        CREATE TABLE IF NOT EXISTS staging_population_growth (
+            country                             VARCHAR(64) PRIMARY KEY,
+            population_growth                   FLOAT NOT NULL,
+            iso_code                            VARCHAR(16) NOT NULL
+        )
+        diststyle auto;
+    """)
+
+    create_staging_urbanization_rate_table = ("""
+        DROP TABLE IF EXISTS staging_urbanization_rate; 
+        CREATE TABLE IF NOT EXISTS staging_urbanization_rate (
+            country                             VARCHAR(64) PRIMARY KEY,
+            urbanization_rate                   FLOAT NOT NULL,
+            iso_code                            VARCHAR(16) NOT NULL
+        )
+        diststyle auto;
     """)
     
-    # create_songplay_table = ("""
-    #     DROP TABLE IF EXISTS songplays; 
-    #     CREATE TABLE IF NOT EXISTS songplays (
-    #         playid varchar(32) NOT NULL,
-    #         start_time timestamp NOT NULL,
-    #         userid int4 NOT NULL,
-    #         "level" varchar(256),
-    #         songid varchar(256),
-    #         artistid varchar(256),
-    #         sessionid int4,
-    #         location varchar(256),
-    #         user_agent varchar(256),
-    #         CONSTRAINT songplays_pkey PRIMARY KEY (playid)
-    #     );
-    # """)
+    create_vaccinations_fact_table = ("""
+        DROP TABLE IF EXISTS vaccinations_fact; 
+        CREATE TABLE IF NOT EXISTS vaccinations_fact (
+            id                                      INTEGER IDENTITY(0,1) PRIMARY KEY,
+            iso_code                                VARCHAR(16) DISTKEY
+            date                                    DATE SORTKEY,
+            vaccines_id                             INTEGER NOT NULL,
+            source_id                               INTEGER NOT NULL,
+            new_cases                               INTEGER,
+            cumulative_cases                        INTEGER,
+            new_deaths                              INTEGER,
+            cumulative_deaths                       INTEGER,
+            total_vaccinations                      INTEGER,
+            people_vaccinated                       INTEGER,
+            people_fully_vaccinated                 INTEGER,
+            daily_vaccinations_raw                  INTEGER,
+            daily_vaccinations                      INTEGER,
+            total_vaccinations_per_hundred          FLOAT,
+            people_vaccinated_per_hundred           FLOAT,
+            people_fully_vaccinated_per_hundred     FLOAT,
+            daily_vaccinations_per_million          FLOAT  
+        )
+    """)
 
-    # create_user_table = ("""
-    #     DROP TABLE IF EXISTS users;   
-    #     CREATE TABLE IF NOT EXISTS users (
-    #         userid int4 NOT NULL,
-    #         first_name varchar(256),
-    #         last_name varchar(256),
-    #         gender varchar(256),
-    #         "level" varchar(256),
-    #         CONSTRAINT users_pkey PRIMARY KEY (userid)
-    #     );
-    # """)
+    create_country_region_dimension_table = ("""
+        DROP TABLE IF EXISTS country_region_dim; 
+        CREATE TABLE IF NOT EXISTS country_region_dim (
+            iso_code                            VARCHAR(16) PRIMARY KEY,
+            population                          BIGINT,
+            first_fatality                      DATE,
+            first_confirmed_case                DATE,
+            lockdown_date                       DATE,
+            lockdown_type                       VARCHAR(16),
+            latitude                            FLOAT,
+            longtitude                          FLOAT,
+            GDP                                 INTEGER,
+            life_expectancy                     FLOAT,
+            population_growth                   FLOAT,
+            urbanization_rate                   FLOAT
+        )
+        diststyle auto;
+    """)
 
-    # create_song_table = ("""
-    #     DROP TABLE IF EXISTS songs;  
-    #     CREATE TABLE IF NOT EXISTS songs (
-    #         songid varchar(256) NOT NULL,
-    #         title varchar(256),
-    #         artistid varchar(256),
-    #         "year" int4,
-    #         duration numeric(18,0),
-    #         CONSTRAINT songs_pkey PRIMARY KEY (songid)
-    #     );
-    # """)
-    
-    # create_artist_table = ("""
-    #     DROP TABLE IF EXISTS artists; 
-    #     CREATE TABLE IF NOT EXISTS artists (
-    #         artistid varchar(256) NOT NULL,
-    #         name varchar(256),
-    #         location varchar(256),
-    #         lattitude numeric(18,0),
-    #         longitude numeric(18,0)
-    #     );
-    # """)   
+    create_time_dimension_table = ("""
+        DROP TABLE IF EXISTS time_dim;  
+        CREATE TABLE IF NOT EXISTS time_dim (
+            date                               Date PRIMARY KEY,
+            year                               INTEGER NOT NULL,
+            month                              INTEGER NOT NULL,
+            week_of_year                       INTEGER NOT NULL
+        );
+        diststyle auto;
+    """)
 
-    # create_time_table = ("""
-    #     DROP TABLE IF EXISTS time; 
-    #     CREATE TABLE IF NOT EXISTS time (
-    #         start_time timestamp NOT NULL,
-    #         "hour" int4,
-    #         "day" int4,
-    #         week int4,
-    #         "month" varchar(256),
-    #         "year" int4,
-    #         weekday varchar(256),
-    #         CONSTRAINT time_pkey PRIMARY KEY (start_time)
-    #      );
-    # """)
+    create_vaccines_dimension_table = ("""
+        DROP TABLE IF EXISTS vaccines_dim;  
+        CREATE TABLE IF NOT EXISTS vaccines_dim (
+            id                                 INTEGER IDENTITY(0,1) PRIMARY KEY,
+            name                               VARCHAR(64) NOT NULL,
+        );
+        diststyle auto;
+    """)  
+ 
+    create_source_dimension_table = ("""
+        DROP TABLE IF EXISTS source_dim;  
+        CREATE TABLE IF NOT EXISTS source_dim (
+            id                                 INTEGER IDENTITY(0,1) PRIMARY KEY,
+            name                               VARCHAR(64) NOT NULL,
+            website                            VARCHAR
+        );
+        diststyle auto;
+    """)  
 
-    # songplay_table_insert = ("""
-    #     SELECT
-    #             md5(events.sessionid || events.start_time) songplay_id,
-    #             events.start_time, 
-    #             events.userid, 
-    #             events.level, 
-    #             songs.song_id, 
-    #             songs.artist_id, 
-    #             events.sessionid, 
-    #             events.location, 
-    #             events.useragent
-    #             FROM (SELECT TIMESTAMP 'epoch' + ts/1000 * interval '1 second' AS start_time, *
-    #         FROM staging_events
-    #         WHERE page='NextSong') events
-    #         LEFT JOIN staging_songs songs
-    #         ON events.song = songs.title
-    #             AND events.artist = songs.artist_name
-    #             AND events.length = songs.duration;
-    # """)
+    vaccinations_fact_table_insert = ("""
+        SELECT
+            c.code_3digit                               AS iso_code,
+            date_reported                               AS date,
+            vaccines_dim.id                             AS vaccines_id,
+            source_dim.id                               AS source_id,
+            new_cases,
+            cumulative_cases,
+            new_deaths,
+            cumulative_deaths,
+            v.total_vaccinations                        AS total_vaccinations,
+            v.people_vaccinated                         AS people_vaccinated,
+            v.people_fully_vaccinated                   AS people_fully_vaccinated,
+            v.daily_vaccinations_raw                    AS daily_vaccinations_raw,
+            v.daily_vaccinations                        AS daily_vaccinations,
+            v.total_vaccinations_per_hundred            AS total_vaccinations_per_hundred,
+            v.people_vaccinated_per_hundred             AS people_vaccinated_per_hundred,
+            v.people_fully_vaccinated_per_hundred       AS people_fully_vaccinated_per_hundred,
+            v.daily_vaccinations_per_million            AS daily_vaccinations_per_million
+        FROM WHO_COVID19_data  WHO
+        JOIN staging_country_code  c ON (WHO.country_code=c.code_2digit)
+        JOIN staging_vaccinations  v ON (WHO.iso_code=v.iso_code )
+        JOIN vaccines_dim ON (vaccines_dim.name=v.vaccines)
+        JOIN source_dim ON (source_dim.name=v.source_name);
+    """)
 
-    # user_table_insert = ("""
-    #     SELECT distinct userid, firstname, lastname, gender, level
-    #     FROM staging_events
-    #     WHERE page='NextSong';
-    # """)
+    country_region_dimension_table_insert = ("""
+        SELECT distinct
+            F.country_code              AS iso_code,
+            F.population_size           AS population,
+            F.date_first_fatality       AS first_fatality,
+            F.date_first_confirmed_case AS first_confirmed_case,
+            F.lockdown_date             AS lockdown_date,
+            F.lockdown_type             AS lockdown_type,
+            F.latitude                  AS latitude,
+            F.longtitude                AS longtitude,
+            GDP.GDP_per_capita          AS GDP,
+            exp.life_expectancy         AS life_expectancy,
+            growth.population_growth    AS population_growth,
+            rate.urbanization_rate      AS urbanization_rate
+        FROM staging_useful_features F
+        JOIN staging_GDP_per_capita GDP ON (F.country_code=GDP.iso_code)
+        JOIN staging_life_expectancy exp ON (F.country_code=exp.iso_code)
+        JOIN staging_population_growth growth ON (F.country_code=growth.iso_code)
+        JOIN staging_urbanization_rate rate ON (F.country_code=rate.iso_code);
+    """)
 
-    # song_table_insert = ("""
-    #     SELECT distinct song_id, title, artist_id, year, duration
-    #     FROM staging_songs;
-    # """)
+    time_dimension_table_insert = ("""
+        SELECT distinct
+            date                       AS date,
+            DATE_PART(yr FROM date)    AS year,
+            DATE_PART(mon FROM date)   AS month,
+            DATE_PART(w FROM date)     AS week_of_year
+        FROM WHO_COVID19_data;
 
-    # artist_table_insert = ("""
-    #     SELECT distinct artist_id, artist_name, artist_location, artist_latitude, artist_longitude
-    #     FROM staging_songs;
-    # """)
+    """)
 
-    # time_table_insert = ("""
-    #     SELECT start_time, extract(hour from start_time), extract(day from start_time), extract(week from start_time), 
-    #            extract(month from start_time), extract(year from start_time), extract(dayofweek from start_time)
-    #     FROM songplays;
-    # """)
+    vaccines_dimension_table_insert = ("""
+        SELECT distinct
+            vaccines                   AS name 
+        FROM staging_vaccinations;
+    """)
+
+    source_dimension_table_insert = ("""
+        SELECT distinct
+            source_name                AS name,
+            source_website             AS website
+        FROM staging_vaccinations;
+    """)

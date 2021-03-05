@@ -72,26 +72,111 @@ with DAG('s3_ETL_redshift_data_warehouse_dag',\
         format="gzip"
     )
 
-    # load_songplays_table = LoadFactOperator(
-    #     task_id='Load_songplays_fact_table',
-    #     dag=dag,
-    #     redshift_conn_id="redshift",
-    #     table="songplays",
-    #     sql_create=SqlQueries.create_songplay_table,
-    #     sql_insert=SqlQueries.songplay_table_insert,
-    #     mode="append-only"
-    # )
+    stage_GDP_per_capita_to_redshift = StageToRedshiftOperator(
+        task_id='Stage_GDP_per_capita',
+        redshift_conn_id="redshift",
+        aws_credentials_id="aws_credentials",
+        table="staging_GDP_per_capita",
+        s3_bucket="tomgt-dend-s3",
+        s3_key="WORLD-DATA-by-country-2020",
+        region="us-west-2",
+        sql_statement=SqlQueries.create_staging_GDP_per_capita_table,
+        format="gzip"
+    )
+
+    stage_life_expectancy_to_redshift = StageToRedshiftOperator(
+        task_id='Stage_life_expectancy',
+        redshift_conn_id="redshift",
+        aws_credentials_id="aws_credentials",
+        table="staging_life_expectancy",
+        s3_bucket="tomgt-dend-s3",
+        s3_key="WORLD-DATA-by-country-2020",
+        region="us-west-2",
+        sql_statement=SqlQueries.create_staging_life_expectancy_table,
+        format="gzip"
+    )
+
+    stage_median_age_to_redshift = StageToRedshiftOperator(
+        task_id='Stage_median_age',
+        redshift_conn_id="redshift",
+        aws_credentials_id="aws_credentials",
+        table="staging_median_age",
+        s3_bucket="tomgt-dend-s3",
+        s3_key="WORLD-DATA-by-country-2020",
+        region="us-west-2",
+        sql_statement=SqlQueries.create_staging_median_age_table,
+        format="gzip"
+    )
+
+    stage_population_growth_to_redshift = StageToRedshiftOperator(
+        task_id='Stage_population_growth',
+        redshift_conn_id="redshift",
+        aws_credentials_id="aws_credentials",
+        table="staging_population_growth",
+        s3_bucket="tomgt-dend-s3",
+        s3_key="WORLD-DATA-by-country-2020",
+        region="us-west-2",
+        sql_statement=SqlQueries.create_staging_population_growth_table,
+        format="gzip"
+    )
+
+    stage_urbanization_rate_to_redshift = StageToRedshiftOperator(
+        task_id='Stage_urbanization_rate',
+        redshift_conn_id="redshift",
+        aws_credentials_id="aws_credentials",
+        table="staging_urbanization_rate",
+        s3_bucket="tomgt-dend-s3",
+        s3_key="WORLD-DATA-by-country-2020",
+        region="us-west-2",
+        sql_statement=SqlQueries.create_staging_urbanization_rate_table,
+        format="gzip"
+    )
+
+    load_vaccinations_fact_table = LoadFactOperator(
+        task_id='load_vaccinations_fact_table',
+        redshift_conn_id="redshift",
+        table="vaccinations_fact",
+        sql_create=SqlQueries.create_vaccinations_fact_table,
+        sql_insert=SqlQueries.vaccinations_fact_table_insert,
+        mode="append-only"
+    )
 
 
-    # load_user_dimension_table = LoadDimensionOperator(
-    #     task_id='Load_user_dim_table',
-    #     dag=dag,
-    #     redshift_conn_id="redshift",
-    #     table="users",
-    #     sql_create=SqlQueries.create_user_table,
-    #     sql_insert=SqlQueries.user_table_insert,
-    #     mode="delete-load"
-    # )
+    load_country_region_dimension_table = LoadDimensionOperator(
+        task_id='Load_country_region_dim_table',
+        redshift_conn_id="redshift",
+        table="country_region_dim",
+        sql_create=SqlQueries.create_country_region_dimension_table,
+        sql_insert=SqlQueries.country_region_dimension_table_insert,
+        mode="delete-load"
+    )
+
+    load__time_dimension_table = LoadDimensionOperator(
+        task_id='Load_time_dim_table',
+        redshift_conn_id="redshift",
+        table="time_dim",
+        sql_create=SqlQueries.create_time_dimension_table,
+        sql_insert=SqlQueries.time_dimension_table_insert,
+        mode="delete-load"
+    )
+
+    load__vaccines_dimension_table = LoadDimensionOperator(
+        task_id='Load_vaccines_dim_table',
+        redshift_conn_id="redshift",
+        table="vaccines_dim",
+        sql_create=SqlQueries.create_vaccines_dimension_table,
+        sql_insert=SqlQueries.vaccines_dimension_table_insert,
+        mode="delete-load"
+    )
+
+    load__source_dimension_table = LoadDimensionOperator(
+        task_id='Load_source_dim_table',
+        redshift_conn_id="redshift",
+        table="vaccines_dim",
+        sql_create=SqlQueries.create_source_dimension_table,
+        sql_insert=SqlQueries.source_dimension_table_insert,
+        mode="delete-load"
+    )
 
     # load_song_dimension_table = LoadDimensionOperator(
     #     task_id='Load_song_dim_table',

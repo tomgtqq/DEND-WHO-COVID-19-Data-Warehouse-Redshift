@@ -14,7 +14,6 @@ class StageToRedshiftOperator(BaseOperator):
         ACCESS_KEY_ID '{}'
         SECRET_ACCESS_KEY '{}'
         REGION '{}'
-        TIMEFORMAT AS 'epochmillisecs'
         FORMAT AS '{}'
     """
     
