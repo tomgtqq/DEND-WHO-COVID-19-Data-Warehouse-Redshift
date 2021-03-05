@@ -15,7 +15,7 @@ class StageToRedshiftOperator(BaseOperator):
         SECRET_ACCESS_KEY '{}'
         REGION '{}'
         TIMEFORMAT AS 'epochmillisecs'
-        FORMAT AS JSON '{}'
+        FORMAT AS '{}'
     """
     
     @apply_defaults
@@ -27,7 +27,7 @@ class StageToRedshiftOperator(BaseOperator):
                  s3_key="",
                  region="",
                  sql_statement="",
-                 format_as_json="",
+                 format="",
                  *args, **kwargs):
 
         super(StageToRedshiftOperator, self).__init__(*args, **kwargs)
@@ -38,7 +38,7 @@ class StageToRedshiftOperator(BaseOperator):
         self.s3_key=s3_key
         self.region=region
         self.sql_statement=sql_statement
-        self.format_as_json=format_as_json
+        self.format=format
 
     def execute(self, context):
         aws_hook = AwsHook(self.aws_credentials_id)
@@ -62,7 +62,7 @@ class StageToRedshiftOperator(BaseOperator):
                 credentials.access_key,
                 credentials.secret_key,
                 self.region,
-                self.format_as_json
+                self.format
             )
         
         redshift_hook.run(formatted_sql)
