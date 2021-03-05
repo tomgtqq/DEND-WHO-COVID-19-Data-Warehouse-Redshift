@@ -25,9 +25,8 @@ class LoadFactOperator(BaseOperator):
     def execute(self, context):
         redshift_hook = PostgresHook(postgres_conn_id=self.redshift_conn_id)
         
-        self.log.info(f"Create {self.table} tables")
+        self.log.info(f"Create {self.table} fact tables")
         redshift_hook.run(f"{self.sql_create}")
-        
         
         if self.mode == "delete-load":
             self.log.info(f"DELETE {self.table} fact tables")

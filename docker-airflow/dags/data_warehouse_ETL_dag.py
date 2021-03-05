@@ -172,50 +172,49 @@ with DAG('s3_ETL_redshift_data_warehouse_dag',\
     load__source_dimension_table = LoadDimensionOperator(
         task_id='Load_source_dim_table',
         redshift_conn_id="redshift",
-        table="vaccines_dim",
+        table="source_dim",
         sql_create=SqlQueries.create_source_dimension_table,
         sql_insert=SqlQueries.source_dimension_table_insert,
         mode="delete-load"
     )
 
-    # load_song_dimension_table = LoadDimensionOperator(
-    #     task_id='Load_song_dim_table',
-    #     dag=dag,
-    #     redshift_conn_id="redshift",
-    #     table="songs",
-    #     sql_create=SqlQueries.create_song_table,
-    #     sql_insert=SqlQueries.song_table_insert,
-    #     mode="delete-load"
-    # )
+    run_stage_quality_checks = DataQualityOperator(
+        task_id='Run_stage_data_quality_checks',
+        redshift_conn_id="redshift",
+        tables=["WHO_COVID19_data",\
+                "staging_vaccinations",\
+                "staging_country_code",\
+                "staging_useful_features",\
+                "staging_GDP_per_capita",\
+                "staging_life_expectancy",\
+                "staging_median_age",\
+                "staging_population_growth",\
+                "staging_urbanization_rate"]
+    )
 
-    # load_artist_dimension_table = LoadDimensionOperator(
-    #     task_id='Load_artist_dim_table',
-    #     dag=dag,
-    #     redshift_conn_id="redshift",
-    #     table="artists",
-    #     sql_create=SqlQueries.create_artist_table,
-    #     sql_insert=SqlQueries.artist_table_insert,
-    #     mode="delete-load"
-    # )
+    run_quality_checks = DataQualityOperator(
+        task_id='Run_data_quality_checks',
+        redshift_conn_id="redshift",
+        tables=["vaccinations_fact","country_region_dim","time_dim","vaccines_dim","source_dim"]
+    )
 
-    # load_time_dimension_table = LoadDimensionOperator(
-    #     task_id='Load_time_dim_table',
-    #     dag=dag,
-    #     redshift_conn_id="redshift",
-    #     table="time",
-    #     sql_create=SqlQueries.create_time_table,
-    #     sql_insert=SqlQueries.time_table_insert,
-    #     mode="delete-load"
-    # )
+    end_operator = DummyOperator(task_id='Stop_execution')
 
-    # run_quality_checks = DataQualityOperator(
-    #     task_id='Run_data_quality_checks',
-    #     dag=dag,
-    #     redshift_conn_id="redshift",
-    #     tables=["songplays","users","songs","artists","time"]
-    # )
-
-    # end_operator = DummyOperator(task_id='Stop_execution',  dag=dag)
-
-    # start_operator >> [stage_events_to_redshift, stage_songs_to_redshift] >> load_songplays_table >> [load_song_dimension_table, load_user_dimension_table, load_artist_dimension_table, load_time_dimension_table] >> run_quality_checks >> end_operator
+    start_operator >> [WHO_COVID19_data_to_redshift,\
+                       stage_country_vaccinations_to_redshift,\
+                       stage_country_code_to_redshift,\
+                       stage_countries_usefulFeatures_to_redshift,\
+                       stage_GDP_per_capita_to_redshift,\
+                       stage_life_expectancy_to_redshift,\
+                       stage_median_age_to_redshift,\
+                       stage_population_growth_to_redshift,\
+                       stage_urbanization_rate_to_redshift]\
+                   >> run_stage_quality_checks \
+                   >> [load_vaccinations_fact_table,\
+                       load_country_region_dimension_table,\
+                       load__time_dimension_table,\
+                       load__vaccines_dimension_table,\
+                       load__source_dimension_table]\
+                   >> run_quality_checks\
+                   >> end_operator
 
