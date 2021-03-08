@@ -38,4 +38,3 @@ class LoadFactOperator(BaseOperator):
             
         self.log.info(f"INSERT DATA INTO {self.table}")
         redshift_hook.run(f"INSERT INTO {self.table} {columns} {self.sql_insert}")
-        

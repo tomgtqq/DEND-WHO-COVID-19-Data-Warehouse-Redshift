@@ -17,7 +17,7 @@ default_args = {
     'email_on_retry': False
 }
 
-dag = DAG('airflow_s3_ETL_redshift_data_warehouse_dag',\
+dag = DAG('airflow_s3_ETL_redshift_data_warehouse_t_dag',\
           default_args=default_args,\
           description='Load and transform data in Redshift with Airflow',\
           schedule_interval='@daily'
@@ -219,5 +219,5 @@ end_operator = DummyOperator(task_id='Stop_execution',  dag=dag)
 
 start_operator >> [WHO_COVID19_data_to_redshift,stage_country_vaccinations_to_redshift,stage_country_code_to_redshift,stage_countries_usefulFeatures_to_redshift,stage_GDP_per_capita_to_redshift,stage_life_expectancy_to_redshift,stage_median_age_to_redshift,stage_population_growth_to_redshift,stage_urbanization_rate_to_redshift] \
                >> run_stage_quality_checks \
-               >> [load_vaccinations_fact_table,load_country_region_dimension_table,load__time_dimension_table,load__vaccines_dimension_table,load__source_dimension_table] \
+               >> [load_country_region_dimension_table,load__time_dimension_table,load__vaccines_dimension_table,load__source_dimension_table] >> load_vaccinations_fact_table \
                >> run_quality_checks >> end_operator

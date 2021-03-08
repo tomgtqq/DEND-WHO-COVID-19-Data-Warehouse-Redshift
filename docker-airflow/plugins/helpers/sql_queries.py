@@ -122,8 +122,8 @@ class SqlQueries:
             id                                      INTEGER IDENTITY(0,1) PRIMARY KEY,
             iso_code                                VARCHAR(16) DISTKEY,
             date                                    DATE SORTKEY,
-            vaccines_id                             INTEGER NOT NULL,
-            source_id                               INTEGER NOT NULL,
+            vaccines_id                             INTEGER,
+            source_id                               INTEGER,
             new_cases                               INTEGER,
             cumulative_cases                        INTEGER,
             new_deaths                              INTEGER,
@@ -173,8 +173,8 @@ class SqlQueries:
     create_vaccines_dimension_table = ("""
         DROP TABLE IF EXISTS vaccines_dim;  
         CREATE TABLE IF NOT EXISTS vaccines_dim (
-            id                                 INTEGER IDENTITY(0,1) PRIMARY KEY,
-            name                               VARCHAR NOT NULL
+            vaccines_id                         INTEGER IDENTITY(0,1) PRIMARY KEY,
+            name                                VARCHAR NOT NULL
         )
         diststyle auto;
     """)  
@@ -182,7 +182,7 @@ class SqlQueries:
     create_source_dimension_table = ("""
         DROP TABLE IF EXISTS source_dim;  
         CREATE TABLE IF NOT EXISTS source_dim (
-            id                                 INTEGER IDENTITY(0,1) PRIMARY KEY,
+            source_id                          INTEGER IDENTITY(0,1) PRIMARY KEY,
             name                               VARCHAR NOT NULL
         )
         diststyle auto;
@@ -190,28 +190,30 @@ class SqlQueries:
 
     vaccinations_fact_table_insert = ("""
         SELECT
-            c.code_3digit                               AS iso_code,
-            date_reported                               AS date,
-            vaccines_dim.id                             AS vaccines_id,
-            source_dim.id                               AS source_id,
+            staging_country_code.code_3digit                       AS iso_code,
+            date_reported                                          AS date, 
+            vaccinations.vaccines_id                               AS vaccines_id,              
+            vaccinations.source_id                                 AS source_id,                                       
             new_cases,
             cumulative_cases,
             new_deaths,
             cumulative_deaths,
-            v.total_vaccinations                        AS total_vaccinations,
-            v.people_vaccinated                         AS people_vaccinated,
-            v.people_fully_vaccinated                   AS people_fully_vaccinated,
-            v.daily_vaccinations_raw                    AS daily_vaccinations_raw,
-            v.daily_vaccinations                        AS daily_vaccinations,
-            v.total_vaccinations_per_hundred            AS total_vaccinations_per_hundred,
-            v.people_vaccinated_per_hundred             AS people_vaccinated_per_hundred,
-            v.people_fully_vaccinated_per_hundred       AS people_fully_vaccinated_per_hundred,
-            v.daily_vaccinations_per_million            AS daily_vaccinations_per_million
+            vaccinations.total_vaccinations                        AS total_vaccinations,
+            vaccinations.people_vaccinated                         AS people_vaccinated,
+            vaccinations.people_fully_vaccinated                   AS people_fully_vaccinated,
+            vaccinations.daily_vaccinations_raw                    AS daily_vaccinations_raw,
+            vaccinations.daily_vaccinations                        AS daily_vaccinations,
+            vaccinations.total_vaccinations_per_hundred            AS total_vaccinations_per_hundred,
+            vaccinations.people_vaccinated_per_hundred             AS people_vaccinated_per_hundred,
+            vaccinations.people_fully_vaccinated_per_hundred       AS people_fully_vaccinated_per_hundred,
+            vaccinations.daily_vaccinations_per_million            AS daily_vaccinations_per_million
         FROM WHO_COVID19_data  WHO
-        JOIN staging_country_code  c ON (WHO.country_code=c.code_2digit)
-        JOIN staging_vaccinations  v ON (WHO.country=v.country)
-        JOIN vaccines_dim ON (vaccines_dim.name=v.vaccines)
-        JOIN source_dim ON (source_dim.name=v.source_name);
+        LEFT JOIN staging_country_code ON (WHO.country_code=staging_country_code.code_2digit)
+        LEFT JOIN (
+            staging_vaccinations 
+            LEFT JOIN vaccines_dim ON (staging_vaccinations.vaccines=vaccines_dim.name)
+            LEFT JOIN source_dim ON (staging_vaccinations.source_name=source_dim.name) 
+        ) AS vaccinations ON (vaccinations.country=WHO.country) ;
     """)
 
     country_region_dimension_table_insert = ("""
