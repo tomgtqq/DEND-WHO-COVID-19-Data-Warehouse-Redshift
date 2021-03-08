@@ -9,12 +9,13 @@ class StageToRedshiftOperator(BaseOperator):
     template_fields = ("s3_key",)
     
     copy_sql = """
-        COPY {}
-        FROM '{}'
-        ACCESS_KEY_ID '{}'
-        SECRET_ACCESS_KEY '{}'
-        REGION '{}'
-        FORMAT AS '{}'
+        COPY {} 
+        FROM '{}' 
+        ACCESS_KEY_ID '{}' 
+        SECRET_ACCESS_KEY '{}' 
+        {} 
+        REGION '{}' 
+        IGNOREHEADER 1;
     """
     
     @apply_defaults
@@ -54,14 +55,15 @@ class StageToRedshiftOperator(BaseOperator):
         self.log.info("Copying data from S3 to Redshift")
         rendered_key = self.s3_key.format(**context)
         s3_path = "s3://{}/{}".format(self.s3_bucket, rendered_key)
+        self.log.info(f"s3_path : {s3_path}")
         
         formatted_sql = StageToRedshiftOperator.copy_sql.format(
                 self.table,
                 s3_path,
                 credentials.access_key,
                 credentials.secret_key,
-                self.region,
-                self.format
+                self.format,
+                self.region
             )
         
         redshift_hook.run(formatted_sql)

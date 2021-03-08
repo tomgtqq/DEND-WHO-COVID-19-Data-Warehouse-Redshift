@@ -1,7 +1,7 @@
 class SqlQueries:   
     create_WHO_COVID19_data_table = ("""
         DROP TABLE IF EXISTS WHO_COVID19_data; 
-        CREATE TABLE IF NOT EXISTS WHO_COVID19_data (
+            CREATE TABLE IF NOT EXISTS WHO_COVID19_data (
             date_reported                        DATE NOT NULL DISTKEY,
             country_code                         VARCHAR(16) NOT NULL SORTKEY,
             country                              VARCHAR(64) NOT NULL,
@@ -29,10 +29,9 @@ class SqlQueries:
             people_vaccinated_per_hundred        FLOAT,
             people_fully_vaccinated_per_hundred  FLOAT,
             daily_vaccinations_per_million       FLOAT,
-            vaccines                             VARCHAR(64),
-            source_name                          VARCHAR(64),
-            source_website                       VARCHAR,
-            CONSTRAINT vaccinations_pkey PRIMARY KEY (date, country)
+            vaccines                             VARCHAR,
+            source_name                          VARCHAR,
+            CONSTRAINT staging_vaccinations_pkey PRIMARY KEY (date, country)
         )
         diststyle auto;
     """)
@@ -40,7 +39,7 @@ class SqlQueries:
     create_staging_country_code_table = ("""
         DROP TABLE IF EXISTS staging_country_code; 
         CREATE TABLE IF NOT EXISTS staging_country_code (
-            country_name                        VARCHAR(64) PRIMARY KEY,
+            country_name                        VARCHAR(64) NOT NULL,
             code_2digit                         VARCHAR(16) NOT NULL,
             code_3digit                         VARCHAR(16) NOT NULL
         )
@@ -68,7 +67,7 @@ class SqlQueries:
     create_staging_GDP_per_capita_table = ("""
         DROP TABLE IF EXISTS staging_GDP_per_capita; 
         CREATE TABLE IF NOT EXISTS staging_GDP_per_capita (
-            country                             VARCHAR(64) PRIMARY KEY,
+            country                             VARCHAR(64) NOT NULL,
             GDP_per_capita                      INTEGER NOT NULL,
             iso_code                            VARCHAR(16) NOT NULL
         )
@@ -78,7 +77,7 @@ class SqlQueries:
     create_staging_life_expectancy_table = ("""
         DROP TABLE IF EXISTS staging_life_expectancy; 
         CREATE TABLE IF NOT EXISTS staging_life_expectancy (
-            country                             VARCHAR(64) PRIMARY KEY,
+            country                             VARCHAR(64) NOT NULL,
             life_expectancy                     FLOAT NOT NULL,
             iso_code                            VARCHAR(16) NOT NULL
         )
@@ -89,7 +88,7 @@ class SqlQueries:
     create_staging_median_age_table = ("""
         DROP TABLE IF EXISTS staging_median_age; 
         CREATE TABLE IF NOT EXISTS staging_median_age (
-            country                             VARCHAR(64) PRIMARY KEY,
+            country                             VARCHAR(64) NOT NULL,
             median_age                          FLOAT NOT NULL,
             iso_code                            VARCHAR(16) NOT NULL
         )
@@ -99,7 +98,7 @@ class SqlQueries:
     create_staging_population_growth_table = ("""
         DROP TABLE IF EXISTS staging_population_growth; 
         CREATE TABLE IF NOT EXISTS staging_population_growth (
-            country                             VARCHAR(64) PRIMARY KEY,
+            country                             VARCHAR(64) NOT NULL,
             population_growth                   FLOAT NOT NULL,
             iso_code                            VARCHAR(16) NOT NULL
         )
@@ -109,7 +108,7 @@ class SqlQueries:
     create_staging_urbanization_rate_table = ("""
         DROP TABLE IF EXISTS staging_urbanization_rate; 
         CREATE TABLE IF NOT EXISTS staging_urbanization_rate (
-            country                             VARCHAR(64) PRIMARY KEY,
+            country                             VARCHAR(64) NOT NULL,
             urbanization_rate                   FLOAT NOT NULL,
             iso_code                            VARCHAR(16) NOT NULL
         )
