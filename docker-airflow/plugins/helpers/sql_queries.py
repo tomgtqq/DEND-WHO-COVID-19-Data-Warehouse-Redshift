@@ -2,16 +2,17 @@ class SqlQueries:
     create_WHO_COVID19_data_table = ("""
         DROP TABLE IF EXISTS WHO_COVID19_data; 
             CREATE TABLE IF NOT EXISTS WHO_COVID19_data (
-            date_reported                        DATE NOT NULL DISTKEY,
-            country_code                         VARCHAR(16) NOT NULL SORTKEY,
-            country                              VARCHAR(64) NOT NULL,
-            WHO_region                           VARCHAR(64) NOT NULL,
+            date_reported                        DATE NOT NULL,
+            country_code                         VARCHAR NOT NULL,
+            country                              VARCHAR NOT NULL,
+            WHO_region                           VARCHAR NOT NULL,
             new_cases                            INTEGER,
             cumulative_cases                     INTEGER,
             new_deaths                           INTEGER,
             cumulative_deaths                    INTEGER,
             CONSTRAINT WHO_COVID19_data_pkey PRIMARY KEY (date_reported, country_code)
-        );
+        )
+        diststyle auto;
     """)
 
     create_staging_vaccinations_table = ("""
@@ -173,7 +174,7 @@ class SqlQueries:
         DROP TABLE IF EXISTS vaccines_dim;  
         CREATE TABLE IF NOT EXISTS vaccines_dim (
             id                                 INTEGER IDENTITY(0,1) PRIMARY KEY,
-            name                               VARCHAR(64) NOT NULL
+            name                               VARCHAR NOT NULL
         )
         diststyle auto;
     """)  
@@ -182,7 +183,7 @@ class SqlQueries:
         DROP TABLE IF EXISTS source_dim;  
         CREATE TABLE IF NOT EXISTS source_dim (
             id                                 INTEGER IDENTITY(0,1) PRIMARY KEY,
-            name                               VARCHAR(64) NOT NULL
+            name                               VARCHAR NOT NULL
         )
         diststyle auto;
     """)  
@@ -208,7 +209,7 @@ class SqlQueries:
             v.daily_vaccinations_per_million            AS daily_vaccinations_per_million
         FROM WHO_COVID19_data  WHO
         JOIN staging_country_code  c ON (WHO.country_code=c.code_2digit)
-        JOIN staging_vaccinations  v ON (WHO.country_code=v.iso_code )
+        JOIN staging_vaccinations  v ON (WHO.country=v.country)
         JOIN vaccines_dim ON (vaccines_dim.name=v.vaccines)
         JOIN source_dim ON (source_dim.name=v.source_name);
     """)
@@ -245,12 +246,12 @@ class SqlQueries:
 
     vaccines_dimension_table_insert = ("""
         SELECT distinct
-            vaccines                   AS name 
+            vaccines                   AS name
         FROM staging_vaccinations;
     """)
 
     source_dimension_table_insert = ("""
         SELECT distinct
-            source_name                AS name,
+            source_name                AS name
         FROM staging_vaccinations;
     """)

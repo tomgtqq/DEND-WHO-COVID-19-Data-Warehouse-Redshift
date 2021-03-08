@@ -28,10 +28,10 @@ class LoadDimensionOperator(BaseOperator):
         self.log.info(f"Create {self.table} dim table")
         redshift_hook.run(f"{self.sql_create}")
         
-        if self.table == "time_dim"
-            columns = ""
-        else:
+        columns = ""
+        if self.table in ("vaccines_dim","source_dim"):
             columns = "(name)"
+            
         
         if self.mode == "delete-load":
             self.log.info(f"DELETE {self.table} dim tables")

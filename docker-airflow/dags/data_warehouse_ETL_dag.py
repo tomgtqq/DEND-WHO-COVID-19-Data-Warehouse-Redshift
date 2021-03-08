@@ -17,7 +17,7 @@ default_args = {
     'email_on_retry': False
 }
 
-dag = DAG('s3_ETL_redshift_data_warehouse_dag',\
+dag = DAG('airflow_s3_ETL_redshift_data_warehouse_dag',\
           default_args=default_args,\
           description='Load and transform data in Redshift with Airflow',\
           schedule_interval='@daily'
@@ -32,7 +32,7 @@ WHO_COVID19_data_to_redshift = StageToRedshiftOperator(
         aws_credentials_id="aws_credentials",
         table="WHO_COVID19_data",
         s3_bucket=Variable.get('s3_bucket'),
-        s3_key="WHO_COVID_19_global_data.csv",
+        s3_key="WHO-COVID-19-global-data.csv",
         region="us-west-2",
         sql_statement=SqlQueries.create_WHO_COVID19_data_table,
         format=Variable.get('format')
