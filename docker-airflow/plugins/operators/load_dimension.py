@@ -28,9 +28,14 @@ class LoadDimensionOperator(BaseOperator):
         self.log.info(f"Create {self.table} dim table")
         redshift_hook.run(f"{self.sql_create}")
         
+        if self.table == "time_dim"
+            columns = ""
+        else:
+            columns = "(name)"
+        
         if self.mode == "delete-load":
             self.log.info(f"DELETE {self.table} dim tables")
             redshift_hook.run(f"DELETE FROM {self.table};")
         
         self.log.info(f"INSERT DATA INTO {self.table}")
-        redshift_hook.run(f"INSERT INTO {self.table} {self.sql_insert}")
+        redshift_hook.run(f"INSERT INTO {self.table} {columns} {self.sql_insert}")
