@@ -119,7 +119,7 @@ class SqlQueries:
         DROP TABLE IF EXISTS vaccinations_fact; 
         CREATE TABLE IF NOT EXISTS vaccinations_fact (
             id                                      INTEGER IDENTITY(0,1) PRIMARY KEY,
-            iso_code                                VARCHAR(16) DISTKEY
+            iso_code                                VARCHAR(16) DISTKEY,
             date                                    DATE SORTKEY,
             vaccines_id                             INTEGER NOT NULL,
             source_id                               INTEGER NOT NULL,
@@ -165,7 +165,7 @@ class SqlQueries:
             year                               INTEGER NOT NULL,
             month                              INTEGER NOT NULL,
             week_of_year                       INTEGER NOT NULL
-        );
+        )
         diststyle auto;
     """)
 
@@ -173,8 +173,8 @@ class SqlQueries:
         DROP TABLE IF EXISTS vaccines_dim;  
         CREATE TABLE IF NOT EXISTS vaccines_dim (
             id                                 INTEGER IDENTITY(0,1) PRIMARY KEY,
-            name                               VARCHAR(64) NOT NULL,
-        );
+            name                               VARCHAR(64) NOT NULL
+        )
         diststyle auto;
     """)  
  
@@ -182,9 +182,8 @@ class SqlQueries:
         DROP TABLE IF EXISTS source_dim;  
         CREATE TABLE IF NOT EXISTS source_dim (
             id                                 INTEGER IDENTITY(0,1) PRIMARY KEY,
-            name                               VARCHAR(64) NOT NULL,
-            website                            VARCHAR
-        );
+            name                               VARCHAR(64) NOT NULL
+        )
         diststyle auto;
     """)  
 
@@ -209,7 +208,7 @@ class SqlQueries:
             v.daily_vaccinations_per_million            AS daily_vaccinations_per_million
         FROM WHO_COVID19_data  WHO
         JOIN staging_country_code  c ON (WHO.country_code=c.code_2digit)
-        JOIN staging_vaccinations  v ON (WHO.iso_code=v.iso_code )
+        JOIN staging_vaccinations  v ON (WHO.country_code=v.iso_code )
         JOIN vaccines_dim ON (vaccines_dim.name=v.vaccines)
         JOIN source_dim ON (source_dim.name=v.source_name);
     """)
@@ -237,12 +236,11 @@ class SqlQueries:
 
     time_dimension_table_insert = ("""
         SELECT distinct
-            date                       AS date,
-            DATE_PART(yr FROM date)    AS year,
-            DATE_PART(mon FROM date)   AS month,
-            DATE_PART(w FROM date)     AS week_of_year
+            date_reported          AS date,
+            DATE_PART(yr, date)    AS year,
+            DATE_PART(mon, date)   AS month,
+            DATE_PART(w, date)     AS week_of_year
         FROM WHO_COVID19_data;
-
     """)
 
     vaccines_dimension_table_insert = ("""
@@ -254,6 +252,5 @@ class SqlQueries:
     source_dimension_table_insert = ("""
         SELECT distinct
             source_name                AS name,
-            source_website             AS website
         FROM staging_vaccinations;
     """)

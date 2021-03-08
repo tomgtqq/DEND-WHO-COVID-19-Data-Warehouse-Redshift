@@ -17,7 +17,7 @@ default_args = {
     'email_on_retry': False
 }
 
-dag = DAG('s3_ETL_redshift_data_warehouse_airflow_dag',\
+dag = DAG('s3_ETL_redshift_data_warehouse_airflow_daily_dag',\
           default_args=default_args,\
           description='Load and transform data in Redshift with Airflow',\
           schedule_interval='@daily'
