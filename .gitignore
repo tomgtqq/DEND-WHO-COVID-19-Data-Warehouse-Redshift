@@ -139,3 +139,8 @@ data/WORLD DATA by country (2020)/Urbanization rate.csv
 image/.DS_Store
 docker-airflow/.DS_Store
 .DS_Store
+data/WORLD-DATA-by-country-2020/Urbanization_rate.csv
+data/WORLD-DATA-by-country-2020/Population_growth.csv
+data/WORLD-DATA-by-country-2020/Median_age.csv
+data/WORLD-DATA-by-country-2020/Life_expectancy.csv
+data/WORLD-DATA-by-country-2020/GDP_per_capita.csv
