@@ -1,6 +1,6 @@
 # DEND-Capstone-Project
 
-Build an Data Lake using Spark And Copy Data from S3 bucket,then process data and store datat ables into S3 bucket.
+Build an ETL pipeline using Airflow to copy Data from the S3 bucket, then process data and create a Data warehouse with Redshift.
 
 
 ### Table of Contents
@@ -13,13 +13,47 @@ Build an Data Lake using Spark And Copy Data from S3 bucket,then process data an
 
 ## Installation <a name="installation"></a>
 
-[Installing Python, JDK, Spark](https://sundog-education.com/spark-python)
+##### 1. Install Airflow Docker
 
+ - Download docker and installing
+https://www.docker.com/products/docker-desktop
+
+##### 2. Installation docker-airflow 
+```
+docker pull puckel/docker-airflow
+
+```
+##### 3. Build docker-airflow
+```
+cd <project path>/docker-airflow/
+
+docker build --rm --build-arg AIRFLOW_DEPS="datadog,dask" -t puckel/docker-airflow .
+
+docker build --rm --build-arg PYTHON_DEPS="flask_oauthlib>=0.9" -t puckel/docker-airflow .
+```
+
+##### 4. Install project dependence
+```
+pip3 install pyspark
+pip3 install pandas-redshift
+pip3 install configparser
+
+```
 
 ## Project Motivation<a name="motivation"></a>
-A music streaming startup, Sparkify, has grown their user base and song database and want to move their data warehouse to a data lake. Their data resides in S3, in a directroy of JSON logs on user activity on the app, as well as a directory with JSON metadata on the songs in their app
-### Fact table and Dimension table with star schemas
-![Star Schemas](./assets/star_schemas.jpg)
+The purpose of the data engineering capstone project is to give a chance to combine what learned throughout the program. 
+
+![DataModel.jpg](image/ETL.jpg)
+
+##### Instructions
+
+- Step 1: Scope the Project and Gather Data
+- Step 2: Explore and Assess the Data
+- Step 3: Define the Data Model
+- Step 4: Run ETL to Model the Data
+- Step 5: Complete Project Write Up
+
+<img src="image/dag.jpg" align="left">
 
 
 ## File Descriptions <a name="files"></a>
@@ -32,20 +66,27 @@ A music streaming startup, Sparkify, has grown their user base and song database
 - docker-airflow #  DAG files 
 - research.ipynb # The project jupyter notebook file
 ```
+##### Fact table and Dimension table with star schemas
+![DataModel.jpg](image/DataModel.jpg)
 
 ## Run <a name="results"></a>
 
-```
-spark-submit etl.py
+##### Run Airflow Docker
 
+```
+docker-compose -f docker-compose-LocalExecutor.yml up -d
+
+docker ps
+
+docker exec -it <container_id> /bin/bash
 ```
 
 ## Licensing, Authors, and Acknowledgements <a name="licensing"></a>
 
 ### Built With
-* [spark sql](https://spark.apache.org/docs/latest/) - Pyspark API
-* [Million Song Dataset](http://millionsongdataset.com/)
-* [Event simulator](https://github.com/Interana/eventsim)
+* [docker-airflow](https://github.com/puckel/docker-airflow) - Airflow Docker file
+* [Pyspark](https://spark.apache.org/docs/latest/) - Pyspark API
+* [Amazon Redshift](https://docs.aws.amazon.com/redshift/latest/dg/welcome.html) - AWS Redshift
 
 ### Versioning
 
