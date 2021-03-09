@@ -1,7 +1,11 @@
 # DEND WHO COVID-19 Data Warehouse Redshift
 
-Build an ETL pipeline using Airflow to copy Data from the S3 bucket, then process data and create a Data warehouse with Redshift.
+The scope of project is to build a Data Mode to analysis CVID-19 world vaccination progress. For example We can analysis where need to speed up vaccination progress.
 
+The following technologies were used:
+Spark
+Airflow
+AWS Redshift, S3
 
 ### Table of Contents
 
@@ -66,6 +70,23 @@ The purpose of the data engineering capstone project is to give a chance to comb
 - docker-airflow #  DAG files 
 - research.ipynb # The project jupyter notebook file
 ```
+## The Data sources:
+The Daily and Total Vaccination for COVID-19 in the world is provided by Kaggle
+
+country_vaccinations.csv
+WHO Coronavirus Disease (COVID-19) is provided by WHO
+
+WHO-COVID-19-global-data.csv There are 1002510 rows
+ISO country code provide by Kaggle
+
+country_code.csv
+The Data contains 12 columns provide by Kaggle
+
+Countries_usefulFeatures.csv
+The Data extracted from Wikipedia's list of countries by category is provided by Kaggle
+
+WORLD DATA by country (2020)
+
 ##### Fact table and Dimension table with star schemas
 ![DataModel.jpg](image/DataModel.jpg)
 
