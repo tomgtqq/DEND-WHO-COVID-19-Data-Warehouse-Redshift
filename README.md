@@ -1,4 +1,4 @@
-# DEND-Capstone-Project
+# DEND WHO COVID-19 Data Warehouse Redshift
 
 Build an ETL pipeline using Airflow to copy Data from the S3 bucket, then process data and create a Data warehouse with Redshift.
 
