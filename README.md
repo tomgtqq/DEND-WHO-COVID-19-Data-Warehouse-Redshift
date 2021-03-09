@@ -3,9 +3,9 @@
 The scope of project is to build a Data Mode to analysis CVID-19 world vaccination progress. For example We can analysis where need to speed up vaccination progress.
 
 The following technologies were used:
-Spark
-Airflow
-AWS Redshift, S3
+- Spark
+- Airflow
+- AWS Redshift, S3
 
 ### Table of Contents
 
