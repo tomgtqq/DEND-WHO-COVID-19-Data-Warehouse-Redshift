@@ -71,15 +71,21 @@ The purpose of the data engineering capstone project is to give a chance to comb
 - research.ipynb # The project jupyter notebook file
 ```
 ## The Data sources:
+
 The Daily and Total Vaccination for COVID-19 in the world is provided by Kaggle
+- [country_vaccinations.csv](https://www.kaggle.com/gpreda/covid-world-vaccination-progress)
 
-- country_vaccinations.csv WHO Coronavirus Disease (COVID-19) is provided by WHO
+WHO Coronavirus Disease (COVID-19) is provided by WHO
+- [WHO-COVID-19-global-data.csv](https://covid19.who.int/)
 
-- WHO-COVID-19-global-data.csv ISO country code provide by Kaggle
+ISO country code provide by Kaggle
+- [country_code.csv](https://www.kaggle.com/koki25ando/country-code)
 
-- country_code.csv The Data contains 12 columns provide by Kaggle
-
-- Countries_usefulFeatures.csv The Data extracted from Wikipedia's list of countries by category is provided by Kaggle
+The Data contains 12 columns provide by Kaggle
+ - [ Countries_usefulFeatures.csv](https://www.kaggle.com/ishivinal/covid19-useful-features-by-country)
+ 
+The Data extracted from Wikipedia's list of countries by category is provided by Kaggle 
+ - [WORLD DATA by country (2020)](https://www.kaggle.com/daniboy370/world-data-by-country-2020?select=Life+expectancy.csv)
 
 ##### Fact table and Dimension table with star schemas
 ![DataModel.jpg](image/DataModel.jpg)
