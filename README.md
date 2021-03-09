@@ -87,7 +87,7 @@ The Data contains 12 columns provide by Kaggle
 The Data extracted from Wikipedia's list of countries by category is provided by Kaggle 
  - [WORLD DATA by country (2020)](https://www.kaggle.com/daniboy370/world-data-by-country-2020?select=Life+expectancy.csv)
 
-##### Fact table and Dimension table with star schemas
+## Fact table and Dimension table with star schemas
 ![DataModel.jpg](image/DataModel.jpg)
 
 ## Run <a name="results"></a>
