@@ -73,19 +73,13 @@ The purpose of the data engineering capstone project is to give a chance to comb
 ## The Data sources:
 The Daily and Total Vaccination for COVID-19 in the world is provided by Kaggle
 
-country_vaccinations.csv
-WHO Coronavirus Disease (COVID-19) is provided by WHO
+- country_vaccinations.csv WHO Coronavirus Disease (COVID-19) is provided by WHO
 
-WHO-COVID-19-global-data.csv There are 1002510 rows
-ISO country code provide by Kaggle
+- WHO-COVID-19-global-data.csv ISO country code provide by Kaggle
 
-country_code.csv
-The Data contains 12 columns provide by Kaggle
+- country_code.csv The Data contains 12 columns provide by Kaggle
 
-Countries_usefulFeatures.csv
-The Data extracted from Wikipedia's list of countries by category is provided by Kaggle
-
-WORLD DATA by country (2020)
+- Countries_usefulFeatures.csv The Data extracted from Wikipedia's list of countries by category is provided by Kaggle WORLD DATA by country (2020)
 
 ##### Fact table and Dimension table with star schemas
 ![DataModel.jpg](image/DataModel.jpg)
