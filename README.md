@@ -79,7 +79,7 @@ The Daily and Total Vaccination for COVID-19 in the world is provided by Kaggle
 
 - country_code.csv The Data contains 12 columns provide by Kaggle
 
-- Countries_usefulFeatures.csv The Data extracted from Wikipedia's list of countries by category is provided by Kaggle WORLD DATA by country (2020)
+- Countries_usefulFeatures.csv The Data extracted from Wikipedia's list of countries by category is provided by Kaggle
 
 ##### Fact table and Dimension table with star schemas
 ![DataModel.jpg](image/DataModel.jpg)
