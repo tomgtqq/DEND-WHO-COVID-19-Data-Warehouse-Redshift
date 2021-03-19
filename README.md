@@ -17,7 +17,7 @@ The following technologies were used:
 
 ## Installation <a name="installation"></a>
 
-##### 1. Install Airflow Docker
+##### 1. Install Docker
 
  - Download docker and installing
 https://www.docker.com/products/docker-desktop
